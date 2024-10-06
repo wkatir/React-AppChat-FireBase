@@ -53,33 +53,37 @@ const Chat: React.FC<ChatProps> = (props) => {
   };
 
   return (
-    <div className="space-y-6 p-6 bg-gradient-to-br from-indigo-900 to-purple-900 rounded-2xl shadow-xl">
-      <div className="border-b border-white/20 pb-4">
-        <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-indigo-300 text-center">
+    <div className="space-y-4 sm:space-y-6 p-4 sm:p-6 bg-gradient-to-br from-indigo-900 to-purple-900 rounded-2xl shadow-xl">
+      <div className="border-b border-white/20 pb-3 sm:pb-4">
+        <h1 className="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-indigo-300 text-center">
           {room.toUpperCase()}
         </h1>
       </div>
-      <div className="h-96 overflow-y-auto space-y-4 pr-2 scrollbar-thin scrollbar-thumb-indigo-500 scrollbar-track-indigo-300">
+      <div className="h-64 sm:h-80 md:h-96 overflow-y-auto space-y-3 sm:space-y-4 pr-2 scrollbar-thin scrollbar-thumb-indigo-500 scrollbar-track-indigo-300">
         {messages.map((message) => (
           <div
-            className="bg-white/10 p-4 rounded-xl backdrop-blur-sm hover:bg-white/15 transition duration-300"
+            className="bg-white/10 p-3 sm:p-4 rounded-xl backdrop-blur-sm hover:bg-white/15 transition duration-300"
             key={message.id}
           >
-            <span className="font-semibold text-pink-300">{message.user}</span>
-            <p className="mt-1 text-white/90">{message.text}</p>
+            <span className="font-semibold text-pink-300 text-sm sm:text-base">
+              {message.user}
+            </span>
+            <p className="mt-1 text-white/90 text-sm sm:text-base">
+              {message.text}
+            </p>
           </div>
         ))}
       </div>
       <form onSubmit={handleSubmit} className="flex space-x-2">
         <input
-          className="flex-grow px-4 py-2 bg-white/10 rounded-full text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:bg-white/20 transition duration-300"
+          className="flex-grow px-3 sm:px-4 py-2 bg-white/10 rounded-full text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:bg-white/20 transition duration-300 text-sm sm:text-base"
           placeholder="Type your message here"
           onChange={(e) => setNewMessage(e.target.value)}
           value={newMessage}
         />
         <button
           type="submit"
-          className="px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 transition duration-300 ease-in-out transform hover:-translate-y-1"
+          className="px-4 sm:px-6 py-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-full font-semibold hover:from-pink-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 transition duration-300 ease-in-out transform hover:-translate-y-1 text-sm sm:text-base"
         >
           Send
         </button>
