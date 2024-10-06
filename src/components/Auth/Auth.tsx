@@ -23,17 +23,17 @@ const Auth: React.FC<AuthProps> = (props) => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-800 via-violet-900 to-purple-800">
-      <div className="p-8 bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 transform hover:scale-105 transition duration-300">
-        <p className="mb-8 text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-indigo-300 text-center">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-indigo-800 via-violet-900 to-purple-800 p-4">
+      <div className="w-full max-w-md p-6 sm:p-8 bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/10 transform hover:scale-105 transition duration-300">
+        <p className="mb-8 sm:mb-8 text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-indigo-300 text-center">
           Sign In With Google
         </p>
         <button
-          className="group w-full px-6 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full font-semibold text-white hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transform hover:-translate-y-1 transition duration-300 ease-in-out flex items-center justify-center space-x-3"
+          className="group w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full font-semibold text-white text-sm sm:text-base hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transform hover:-translate-y-1 transition duration-300 ease-in-out flex items-center justify-center space-x-3"
           onClick={signInWithGoogle}
         >
           <svg
-            className="w-6 h-6 fill-current"
+            className="w-5 h-5 sm:w-6 sm:h-6 fill-current"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
