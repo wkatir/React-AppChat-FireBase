@@ -25,5 +25,8 @@ dist-ssr
 
 #
 .env
-output-*.css
+
+**/output.css
+
+
 
