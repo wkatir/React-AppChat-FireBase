@@ -1,50 +1,87 @@
-# React + TypeScript + Vite
+# Chat Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time chat application built using React, Tailwind CSS, Vite, and Firebase for authentication and messaging.
 
-Currently, two official plugins are available:
+## Features
+- User authentication using Firebase
+- Real-time chat functionality
+- Dynamic room creation
+- Responsive design using Tailwind CSS
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+### Frontend:
+- React
+- Tailwind CSS
+- Vite
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Backend:
+- Firebase (for authentication and Firestore)
 
-- Configure the top-level `parserOptions` property like this:
+### Others:
+- Universal Cookies (for managing user sessions)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Prerequisites
+- Node.js (v18 or later)
+- npm
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/wkatir/React-AppChat-FireBase.git
+   cd React-AppChat-FireBase
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Set up Firebase:
+   - Create a new project in Firebase Console.
+   - Enable Authentication (e.g., Google Sign-In).
+   - Create a Firestore database.
+   - Update the `fireBaseConfig.ts` file with your Firebase configuration.
+
+4. Run the application:
+   ```bash
+   npm run dev
+   ```
+
+5. Open your browser:
+   - Navigate to [http://localhost:5173/](http://localhost:5173/).
+
+## Usage
+- Sign in using Google to start chatting.
+- Enter a room name to create or join a chat room.
+- Send messages in real-time with other users in the same room.
+
+## Room Preview
+![Room Preview](https://res.cloudinary.com/di0cvbfdb/image/upload/v1728248635/Chat/s1latyfbkbslyrpr7zbx.png)
+
+## Chat Preview
+![Chat Preview](https://res.cloudinary.com/di0cvbfdb/image/upload/v1728248636/Chat/xym6cragjg8hhnxmouhr.png)
+
+## Contributing
+Contributions are welcome! Please follow these steps:
+1. Fork the project
+2. Create your feature branch:
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m 'Add some feature'
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+5. Open a pull request
+
+## License
+This project is licensed under the MIT License.
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Feel free to adjust any parts as necessary!
