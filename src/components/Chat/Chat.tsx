@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Chat.module.css'
-import {addDoc, collection, onSnapshot, query, serverTimestamp, where} from "firebase/firestore"
+import {addDoc, collection, onSnapshot, orderBy, query, serverTimestamp, where} from "firebase/firestore"
 import { auth, db } from '../fireBaseConfig/fireBaseConfig';
 
 
@@ -18,15 +18,18 @@ const Chat: React.FC<ChatProps> = (props) => {
     
 
    useEffect(() =>{
-        const queryMessages = query(messageRef, where("room", "==", room))
-        onSnapshot(queryMessages, (snaphot) => {
+        const queryMessages = query(messageRef, where("room", "==", room), orderBy("createdAt"))
+       const unsuscribe = onSnapshot(queryMessages, (snaphot) => {
             let messages: any[] = [];
             snaphot.forEach((document) => {
                 messages.push({ ...document.data(), id: document.id });
            })
            setMessages(messages);
         });
-   }, [])
+
+        return () => unsuscribe();
+
+   }, [room]);
 
     const handleSubmit =  async (e: React.FormEvent) => {
         e.preventDefault();
@@ -45,9 +48,15 @@ const Chat: React.FC<ChatProps> = (props) => {
 
     return (
         <div className={styles.chatApp}>
-        <div>
+            <div className={styles.header}>
+                <h1>Welcome to: {room.toUpperCase()}</h1>
+            </div>
+        <div className={styles.messages}>
             {messages.map((message) => (
-                <h1 key={message.id}>{message.text}</h1>
+                <div className={styles.message} key={message.id}>
+                    <span className={styles.user}>{message.user}</span>
+                    <p>{message.text}</p>
+                </div>
             ))}
         </div>
         <form  onSubmit={handleSubmit} className={styles.newMessageForm}>
