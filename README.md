@@ -1,5 +1,8 @@
 # Chat Application
 
+![Room Preview](https://res.cloudinary.com/di0cvbfdb/image/upload/v1728248635/Chat/s1latyfbkbslyrpr7zbx.png)
+![Chat Preview](https://res.cloudinary.com/di0cvbfdb/image/upload/v1728248636/Chat/xym6cragjg8hhnxmouhr.png)
+
 A real-time chat application built using React, Tailwind CSS, Vite, and Firebase for authentication and messaging.
 
 ## Features
@@ -44,24 +47,24 @@ A real-time chat application built using React, Tailwind CSS, Vite, and Firebase
    - Create a Firestore database.
    - Update the `fireBaseConfig.ts` file with your Firebase configuration.
 
-4. Run the application:
+4. Tailwind CSS setup:
+   Run the following command to process your `index.css` file:
+   ```bash
+   npx tailwindcss -i ./src/index.css -o ./src/output.css --watch
+   ```
+
+5. Run the application:
    ```bash
    npm run dev
    ```
 
-5. Open your browser:
+6. Open your browser:
    - Navigate to [http://localhost:5173/](http://localhost:5173/).
 
 ## Usage
 - Sign in using Google to start chatting.
 - Enter a room name to create or join a chat room.
 - Send messages in real-time with other users in the same room.
-
-## Room Preview
-![Room Preview](https://res.cloudinary.com/di0cvbfdb/image/upload/v1728248635/Chat/s1latyfbkbslyrpr7zbx.png)
-
-## Chat Preview
-![Chat Preview](https://res.cloudinary.com/di0cvbfdb/image/upload/v1728248636/Chat/xym6cragjg8hhnxmouhr.png)
 
 ## Contributing
 Contributions are welcome! Please follow these steps:
@@ -84,4 +87,4 @@ Contributions are welcome! Please follow these steps:
 This project is licensed under the MIT License.
 ```
 
-Feel free to adjust any parts as necessary!
+Feel free to adjust any parts as necessary! :D
