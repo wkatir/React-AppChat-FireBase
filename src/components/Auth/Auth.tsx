@@ -1,13 +1,10 @@
 import React from "react";
-import { auth, provider } from "../fireBaseConfig/fireBaseConfig";
+import { auth, provider } from "../../utils/fireBaseConfig";
 import { signInWithPopup } from "firebase/auth";
 import Cookies from "universal-cookie";
+import { AuthProps } from "../../interfaces/auth/authprops";
 
 const cookies = new Cookies();
-
-interface AuthProps {
-  setIsAuth: (isAuth: boolean) => void;
-}
 
 const Auth: React.FC<AuthProps> = (props) => {
   const { setIsAuth } = props;

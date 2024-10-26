@@ -3,7 +3,7 @@ import Auth from "./components/Auth/Auth";
 import Cookies from "universal-cookie";
 import Chat from "./components/Chat/Chat";
 import { signOut } from "firebase/auth";
-import { auth } from "./components/fireBaseConfig/fireBaseConfig";
+import { auth } from "./utils/fireBaseConfig";
 
 const cookies = new Cookies();
 

@@ -8,17 +8,15 @@ import {
   serverTimestamp,
   where,
 } from "firebase/firestore";
-import { auth, db } from "../fireBaseConfig/fireBaseConfig";
-
-interface ChatProps {
-  room: string;
-}
+import { auth, db } from "../../utils/fireBaseConfig";
+import { Message } from "../../interfaces/chat/message";
+import { ChatProps } from "../../interfaces/chat/chatprops";
 
 const Chat: React.FC<ChatProps> = (props) => {
   const { room } = props;
 
   const [newMessage, setNewMessage] = useState<string>("");
-  const [messages, setMessages] = useState<any[]>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const messageRef = collection(db, "messages");
 
   useEffect(() => {
@@ -28,9 +26,9 @@ const Chat: React.FC<ChatProps> = (props) => {
       orderBy("createdAt")
     );
     const unsuscribe = onSnapshot(queryMessages, (snaphot) => {
-      let messages: any[] = [];
+      const messages: Message[] = [];
       snaphot.forEach((document) => {
-        messages.push({ ...document.data(), id: document.id });
+        messages.push({ ...document.data(), id: document.id } as Message);
       });
       setMessages(messages);
     });
