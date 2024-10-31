@@ -21,7 +21,7 @@ export const RoomEntry: React.FC<RoomEntryProps> = ({
           <div className="flex items-center justify-center space-x-2 mb-8">
             <Sparkles className="w-6 h-6 text-blue-400 animate-pulse" />
             <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
-              Portal de Entrada
+              Room Entry Portal
             </h2>
             <Sparkles className="w-6 h-6 text-purple-400 animate-pulse" />
           </div>
@@ -36,7 +36,7 @@ export const RoomEntry: React.FC<RoomEntryProps> = ({
                   setRoomInput(e.target.value)
                 }
                 className="w-full pl-12 pr-4 py-4 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-100 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
-                placeholder="Ingresa el nombre de la sala..."
+                placeholder="Enter the name of the room..."
               />
             </div>
           </div>
@@ -48,7 +48,7 @@ export const RoomEntry: React.FC<RoomEntryProps> = ({
             <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-gradient-to-r from-blue-600 to-purple-600" />
             <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-gray-900 px-6 py-4 text-sm font-medium backdrop-blur-3xl transition-all duration-300 group-hover:bg-opacity-80">
               <span className="relative text-gray-100 flex items-center gap-2 font-semibold tracking-wider">
-                ENTRAR AL PORTAL
+                ENTER THE PORTAL
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </span>
