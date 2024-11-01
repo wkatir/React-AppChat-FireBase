@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/fireBaseConfig";
 import Cookies from "universal-cookie";
-import { AuthState } from '../interfaces/auth/auth';
+import { AuthState } from "../interfaces/auth/auth";
 
 const cookies = new Cookies();
 
 export const useAuth = (): AuthState => {
-  const [isAuth, setIsAuth] = useState<boolean>(cookies.get("auth-token") ? true : false);
+  const [isAuth, setIsAuth] = useState<boolean>(
+    cookies.get("auth-token") ? true : false
+  );
   const [room, setRoom] = useState<string | null>(null);
   const [roomInput, setRoomInput] = useState<string>("");
 
@@ -36,6 +38,6 @@ export const useAuth = (): AuthState => {
     roomInput,
     setRoomInput,
     handleEnterRoom,
-    signUserOut
+    signUserOut,
   };
 };
